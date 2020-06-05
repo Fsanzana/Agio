@@ -4,7 +4,7 @@ import java.io.IOException;
 
 public class jsoutTesting {
     public static void main(String[] args) throws IOException {
-        System.out.println( Jsoup.parse("https://preciosmundi.com/chile/precios-supermercado","UTF-8"));
+        System.out.println( Jsoup.connect("https://preciosmundi.com/chile/precios-supermercado").get());
 
     }
 }

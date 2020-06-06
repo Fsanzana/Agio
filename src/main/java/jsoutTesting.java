@@ -22,7 +22,6 @@ public class jsoutTesting {
                     continue;
                 }else {
                     final String ticker = row.select("td.price:nth-of-type(3)").text();
-                    System.out.println(ticker.replaceAll("[$]", "").replaceAll("[,]", "."));
                     double precio = Double.parseDouble(ticker.replaceAll("[$]", "").replaceAll("[,]", "."));
                     dividendoA+= precio;
                     preciosA.add(precio);
@@ -33,7 +32,6 @@ public class jsoutTesting {
                     continue;
                 }else {
                     final String ticker = row.select("td.price:nth-of-type(3)").text();
-                    System.out.println(ticker.replaceAll("[$]", "").replaceAll("[,]", "."));
                     double precio = Double.parseDouble(ticker.replaceAll("[$]", "").replaceAll("[,]", "."));
                     dividendoB+= precio;
                     preciosB.add(precio);
@@ -43,5 +41,11 @@ public class jsoutTesting {
         }catch(Exception e){
             System.out.println(e.getMessage());
         }
+        double promedio=0;
+        for (int i=0;i<preciosA.size();i++){
+            promedio+=(preciosB.get(i)*100)/preciosA.get(i);
+        }
+        promedio=promedio/divisor;
+        System.out.println(promedio);
     }
 }

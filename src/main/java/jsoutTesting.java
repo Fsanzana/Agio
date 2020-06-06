@@ -6,17 +6,17 @@ import java.io.IOException;
 
 public class jsoutTesting {
     public static void main(String[] args) throws IOException {
-        final String url = "https://www.numbeo.com/food-prices/country_result.jsp?country=Chile";
+        final String url = "https://preciosmundi.com/chile/precios-supermercado";
 
 
         try{
             final Document documento = Jsoup.connect(url).get();
 
             for(Element row : documento.select("table tr")){
-                if(row.select("td:nth-of-type(2)").text().equals("")){
+                if(row.select("td.price:nth-of-type(3)").text().equals("")){
                     continue;
                 }else {
-                    final String ticker = row.select("td:nth-of-type(2)").text();
+                    final String ticker = row.select("td.price:nth-of-type(3)").text();
                     System.out.println(ticker);
                 }
             }

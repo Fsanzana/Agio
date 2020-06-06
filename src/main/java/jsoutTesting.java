@@ -3,6 +3,7 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 
 import java.io.IOException;
+import java.util.Scanner;
 
 public class jsoutTesting {
     public static void main(String[] args) throws IOException {
@@ -17,7 +18,8 @@ public class jsoutTesting {
                     continue;
                 }else {
                     final String ticker = row.select("td.price:nth-of-type(3)").text();
-                    System.out.println(ticker);
+                    System.out.println(ticker.replaceAll("[$]", "").replaceAll("[,]", "."));
+
                 }
             }
         }catch(Exception e){

@@ -6,9 +6,9 @@ import java.util.ArrayList;
 
 
 public class jsoutTesting {
-    public static void main(String[] args) throws IOException {
-        final String url1 = "https://preciosmundi.com/chile/precios-supermercado";
-        final String url2 = "https://preciosmundi.com/argentina/precios-supermercado";
+    public void Comparador(String paisBase, String paisComparacion) throws IOException {
+        final String url1 = "https://preciosmundi.com/"+paisBase+"/precios-supermercado";
+        final String url2 = "https://preciosmundi.com/"+paisComparacion+"/precios-supermercado";
         ArrayList<Double> preciosA = new ArrayList<Double>();
         ArrayList<Double> preciosB = new ArrayList<Double>();
         int divisor=17;

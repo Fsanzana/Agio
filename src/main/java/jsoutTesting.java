@@ -42,10 +42,14 @@ public class jsoutTesting {
             System.out.println(e.getMessage());
         }
         double promedio=0;
-        for (int i=0;i<preciosA.size();i++){
-            promedio+=(preciosB.get(i)*100)/preciosA.get(i);
-        }
-        promedio=promedio/divisor;
-        System.out.println(promedio);
-    }
+
+
+            for (int i = 0; i < preciosA.size(); i++) {
+                promedio += (preciosB.get(i) * 100) / preciosA.get(i);
+            }
+            promedio=(promedio/divisor);
+            System.out.println(promedio);
+
+
+}
 }

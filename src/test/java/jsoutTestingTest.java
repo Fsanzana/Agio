@@ -20,5 +20,8 @@ public class jsoutTestingTest {
     @Test
     public void comparador() throws IOException {
         c.Comparador("chile","argentina");
+        c.Comparador("argentina","chile");
+        c.Comparador("chile","mexico");
+        c.Comparador("mexico","argentina");
     }
 }

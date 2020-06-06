@@ -11,8 +11,10 @@ public class jsoutTesting {
 
         try{
             final Document documento = Jsoup.connect(url).get();
-            System.out.println(documento);
+
             for(Element row : documento.select("table.tableresponsive tr")){
+                final String ticker = row.select(".price").text();
+                System.out.println(ticker);
 
             }
         }catch(Exception e){

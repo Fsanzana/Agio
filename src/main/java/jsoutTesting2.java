@@ -3,10 +3,13 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 
+import java.util.ArrayList;
+
 public class jsoutTesting2 {
 
-    public void jsoutTesting2(String url) {
+    public static double jsoutTesting2(String url) {
         final String URL = url;
+        ArrayList<Double> precio = new ArrayList<Double>();
         int i = 0;
         try {
             final Document document = Jsoup.connect(URL).get();
@@ -21,14 +24,25 @@ public class jsoutTesting2 {
                             tempPrice.replace(",", ".").replace("$", "");
                     final double price = Double.parseDouble(tempPrice1);
 
-                    System.out.println(tempPrice1);
+                   precio.add(price);
 
                 }
                 i++;
-                System.out.println(i);
+
             }
         } catch (Exception ex) {
             ex.printStackTrace();
         }
+
+        double prom = promedio(precio, i);
+        return prom;
+    }
+
+    private static double promedio(ArrayList<Double> precio, int i) {
+        double prom = 0;
+        for (int j = 0; j < precio.size(); j++) {
+            prom += precio.get(j);
+        }
+        return (prom = prom/i);
     }
 }

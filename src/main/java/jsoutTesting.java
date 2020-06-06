@@ -6,7 +6,7 @@ import java.io.IOException;
 
 public class jsoutTesting {
     public static void main(String[] args) throws IOException {
-        final String url = "https://preciosmundi.com/chile/precios-supermercado";
+        final String url = "https://preciosmundi.com/argentina/precios-supermercado";
         int divisor=0;
         double dividendo=0;
         try{
@@ -27,5 +27,7 @@ public class jsoutTesting {
         }
         System.out.println(dividendo);
         System.out.println(divisor);
+        double promedio=dividendo/divisor;
+        System.out.println(promedio);
     }
 }

@@ -6,12 +6,13 @@ import java.io.IOException;
 
 public class jsoutTesting {
     public static void main(String[] args) throws IOException {
-        final String url = "https://preciosmundi.com/argentina/precios-supermercado";
+        final String url1 = "https://preciosmundi.com/argentina/precios-supermercado";
+        final String url2 = "https://preciosmundi.com/argentina/precios-supermercado";
         int divisor=0;
         double dividendo=0;
         try{
-            final Document documento = Jsoup.connect(url).get();
-
+            final Document documento = Jsoup.connect(url1).get();
+            final Document documento2 = Jsoup.connect(url2).get();
             for(Element row : documento.select("table tr")){
                 if(row.select("td.price:nth-of-type(3)").text().equals("")){
                     continue;

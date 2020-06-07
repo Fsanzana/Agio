@@ -16,7 +16,7 @@ public class Main {
         String pais1 = "";
         do {
             try {
-                System.out.println("1- Chile" + '\n' + "2- Argentina");
+                System.out.println("1- Chile" + '\n' + "2- Argentina"+ '\n' + "3- México"+ '\n' + "4- Perú"+ '\n' + "5- Bolivia");
                 System.out.println("Ingrese país base:");
                 eleccion = tec.nextInt();
                 switch (eleccion) {
@@ -27,6 +27,21 @@ public class Main {
                         break;
                     case 2:
                         pais0 = "argentina";
+                        System.out.println("Ingrese país a comparar:");
+                        eleccion = tec.nextInt();
+                        break;
+                    case 3:
+                        pais0 = "mexico";
+                        System.out.println("Ingrese país a comparar:");
+                        eleccion = tec.nextInt();
+                        break;
+                    case 4:
+                        pais0 = "peru";
+                        System.out.println("Ingrese país a comparar:");
+                        eleccion = tec.nextInt();
+                        break;
+                    case 5:
+                        pais0 = "bolivia";
                         System.out.println("Ingrese país a comparar:");
                         eleccion = tec.nextInt();
                         break;
@@ -41,6 +56,15 @@ public class Main {
                         break;
                     case 2:
                         pais1 = "argentina";
+                        break;
+                    case 3:
+                        pais1 = "mexico";
+                        break;
+                    case 4:
+                        pais1 = "peru";
+                        break;
+                    case 5:
+                        pais1 = "bolivia";
                         break;
                     default:
                         eleccion = 0;

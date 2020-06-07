@@ -8,17 +8,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class Comparador {
+class Comparador {
 
 
-    public List<Double> comparador(String url) {
-        final String URL = "https://preciosmundi.com/" + url + "/precios-supermercado";
-        ArrayList<Double> precio = new ArrayList<Double>();
+    List<Double> comparador(String url) {
+        final String URL = "https://preciosmundi.com/" + url + "/precios-supermercado"; // url dinamica
+        ArrayList<Double> precios = new ArrayList<Double>();
 
         try {
-            final Document document = Jsoup.connect(URL).get();
+            final Document document = Jsoup.connect(URL).get();         //recoleccion de el codigo html de la pagina objetivo
 
-            for (Element row : document.select("div.table-responsive tr")) {
+            for (Element row : document.select("div.table-responsive tr")) {    //filtracion de datos especificos en la pagina
                 if (row.select("td:nth-of-type(1)").text().equals("")) {
                     continue;
                 } else {
@@ -26,26 +26,26 @@ public class Comparador {
                             row.select("td.price:nth-of-type(3)").text();
                     final String tempPrice1 =
                             tempPrice.replaceAll(",", ".").replaceAll("[$]", "");
-                    final double price = Double.parseDouble(tempPrice1);
+                    final double precio = Double.parseDouble(tempPrice1);
 
-                    precio.add(price);
+                    precios.add(precio);      //datos almacenados en arraylist
 
 
                 }
 
             }
-        } catch (NumberFormatException ex) {
-            System.out.println("Error, país no válido");
-            
+        } catch (NumberFormatException ex) {              //algunas tablas de la pagina tienen un formato distintos, causando un fallo en
+            System.out.println("Error, país no válido");  //el programa, esto se solucionara en versiones futuras
+
         } catch (IOException e) {
             System.out.println("Error de entrada, por favor ingrese un país valido");
 
         }
 
-        return (precio);
+        return (precios);
     }
 
-    public double porcentaje(String url1, String url2) {
+    double porcentaje(String url1, String url2) {
         double porcentaje = 0;
         ArrayList<Double> precio1 = (ArrayList<Double>) comparador(url1);
         ArrayList<Double> precio2 = (ArrayList<Double>) comparador(url2);

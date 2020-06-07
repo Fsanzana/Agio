@@ -42,7 +42,6 @@ public class jsoutTesting {
         }catch(Exception e){
             System.out.println(e.getMessage());
         }
-        System.out.println(divisor);
         double promedio=0;
 
 

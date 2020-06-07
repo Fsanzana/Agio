@@ -11,12 +11,12 @@ public class Main {
 
 
     private static void menu(Comparador comp) {
-        int eleccion=0;
+        int eleccion = 0;
         String pais0 = "";
         String pais1 = "";
         do {
             try {
-                System.out.println("1- Chile" + '\n' + "2- Argentina"+ '\n' + "3- México"+ '\n' + "4- Perú"+ '\n' + "5- Bolivia");
+                System.out.println("1- Chile" + '\n' + "2- Argentina" + '\n' + "3- México" + '\n' + "4- Perú" + '\n' + "5- Bolivia");
                 System.out.println("Ingrese país base:");
                 eleccion = tec.nextInt();
                 switch (eleccion) {
@@ -46,7 +46,7 @@ public class Main {
                         eleccion = tec.nextInt();
                         break;
                     default:
-                        eleccion = 0;
+                        eleccion = -1;
                         break;
 
                 }
@@ -67,18 +67,18 @@ public class Main {
                         pais1 = "bolivia";
                         break;
                     default:
-                        eleccion = 0;
+                        eleccion = -1;
                         System.out.println("Por favor ingrese una opción valida");
                         break;
                 }
-            }catch (InputMismatchException e){
+            } catch (InputMismatchException e) {
                 System.out.println("Por favor ingrese un número entero");
                 tec = new Scanner(System.in);
-                eleccion=0;
+                eleccion = -1;
             }
-        }while (eleccion==0);
-        double porcentaje=100-comp.porcentaje(pais0, pais1);
-        System.out.println("El porcentaje de conveniencia es de: "+porcentaje+"%");
+            double porcentaje = 100 - comp.porcentaje(pais0, pais1);
+            System.out.println("El porcentaje de conveniencia es de: " + porcentaje + "%");
+        } while (eleccion != 0);
 
 
     }

@@ -36,8 +36,10 @@ public class Comparador {
             }
         } catch (NumberFormatException ex) {
             System.out.println("Error, país no válido");
+            System.out.println(ex.getMessage());
         }catch (IOException e){
             System.out.println("Error de entrada, por favor ingrese un país valido");
+            System.out.println(e.getMessage());
         }
 
         return (precio);

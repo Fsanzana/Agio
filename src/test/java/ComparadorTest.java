@@ -20,6 +20,9 @@ public class ComparadorTest {
 
     @Test
     public void comparador() {
+        test.comparador("estados-unidos");
+        test.comparador("afdhsfjdhj");
+
         
     }
 

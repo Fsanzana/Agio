@@ -9,8 +9,8 @@ public class jsoutTesting2 {
 
     public static double jsoutTesting2(String url) {
         final String URL = url;
-        ArrayList<Double> precio = new ArrayList<Double>();
-        int i = 0;
+        double precio = 0;
+        double i = 0;
         try {
             final Document document = Jsoup.connect(URL).get();
 
@@ -21,10 +21,10 @@ public class jsoutTesting2 {
                     final String tempPrice =
                             row.select("td.price:nth-of-type(3)").text();
                     final String tempPrice1 =
-                            tempPrice.replace(",", ".").replace("$", "");
+                            tempPrice.replaceAll(",", ".").replaceAll("[$]", "");
                     final double price = Double.parseDouble(tempPrice1);
 
-                   precio.add(price);
+                   precio+= price;
 
                 }
                 i++;
@@ -34,15 +34,8 @@ public class jsoutTesting2 {
             ex.printStackTrace();
         }
 
-        double prom = promedio(precio, i);
-        return prom;
+        return (precio/i);
     }
 
-    private static double promedio(ArrayList<Double> precio, int i) {
-        double prom = 0;
-        for (int j = 0; j < precio.size(); j++) {
-            prom += precio.get(j);
-        }
-        return (prom = prom/i);
-    }
+
 }

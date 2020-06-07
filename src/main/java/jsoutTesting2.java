@@ -8,17 +8,7 @@ import java.util.List;
 
 
 public class jsoutTesting2 {
-    private double divisor;
 
-
-
-    public double getDivisor() {
-        return divisor;
-    }
-
-    public void setDivisor(double divisor) {
-        this.divisor = divisor;
-    }
 
     public List<Double> jsoutTesting2(String url) {
         final String URL = "https://preciosmundi.com/"+url+"/precios-supermercado";
@@ -38,7 +28,7 @@ public class jsoutTesting2 {
                     final double price = Double.parseDouble(tempPrice1);
 
                    precio.add(price);
-                    this.divisor++;
+
 
                 }
 

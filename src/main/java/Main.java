@@ -8,6 +8,7 @@ public class Main {
         menu(Comp);
     }
 
+
     private static void menu(jsoutTesting2 comp) {
         String pais0="";
         String pais1="";
@@ -24,6 +25,7 @@ public class Main {
             default:
                 break;
         }
+
         System.out.println("1- Chile"+'\n'+"2- Argentina");
         System.out.println("Ingrese país a comparar:");
         eleccion = tec.nextInt();
@@ -37,23 +39,14 @@ public class Main {
             default:
                 break;
 
-        }
-        porcentaje(comp.jsoutTesting2(pais0), comp.jsoutTesting2(pais1));
-    }
 
-    private static void porcentaje(List<Double> jsoutTesting2, List<Double> jsoutTesting21) {
-        double divisor = jsoutTesting2.size();
 
-        double porcentaje=0;
-        for (int i = 0; i < jsoutTesting2.size(); i++) {
-            porcentaje += (jsoutTesting21.get(i)*100)/jsoutTesting2.get(i);
 
         }
-        porcentaje = porcentaje/divisor;
-        System.out.println(porcentaje);
 
+        System.out.println(comp.jsoutTesting3(pais0, pais1));
 
     }
-
 
 }
+

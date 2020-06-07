@@ -77,7 +77,9 @@ public class Main {
                 eleccion=0;
             }
         }while (eleccion==0);
-        System.out.println(comp.porcentaje(pais0, pais1));
+        double porcentaje=100-comp.porcentaje(pais0, pais1);
+        System.out.println("El porcentaje de conveniencia es de: "+porcentaje+"%");
+
 
     }
 

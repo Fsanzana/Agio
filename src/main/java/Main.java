@@ -89,6 +89,8 @@ public class Main {
                     eleccion = tec.nextInt();
                 } catch (InputMismatchException e) {
                     System.out.println("Por favor ingrese las opciones SI o NO\n");
+                    tec = new Scanner(System.in);
+                    eleccion = -1;
                 }
             }while (eleccion!=1 && eleccion!=0);
 

@@ -24,7 +24,6 @@ public class Main {
             default:
                 break;
         }
-        System.out.println("1- Chile"+'\n'+"2- Argentina");
         System.out.println("Ingrese país a comparar:");
         eleccion = tec.nextInt();
         switch (eleccion){

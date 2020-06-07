@@ -2,26 +2,22 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Main {
+    private static Scanner tec = new Scanner(System.in);
     public static void main(String[] args) {
         jsoutTesting2 Comp = new jsoutTesting2();
-
-        Scanner tec = new Scanner(System.in);
-
-        int eleccion = tec.nextInt();
-
-        menu(eleccion, Comp);
-
-
+        menu(Comp);
     }
 
-    private static void menu(int eleccion, jsoutTesting2 comp) {
+    private static void menu(jsoutTesting2 comp) {
+        String pais0="";
+        String pais1="";
+        System.out.println("1- Chile"+'\n'+"2- Argentina");
+        System.out.println("Ingrese país base:");
+        int eleccion = tec.nextInt();
         switch (eleccion){
-            case 1: String pais0 = "chile";
-                    String pais1 = "argentina";
-                    porcentaje(comp.jsoutTesting2(pais0), comp.jsoutTesting2(pais1));
-
+            case 1:
+                pais0 = "chile";
                     break;
-<<<<<<< Updated upstream
             case 2:
                 pais0 = "argentina";
                 break;
@@ -40,11 +36,9 @@ public class Main {
                 break;
             default:
                 break;
-=======
-
->>>>>>> Stashed changes
 
         }
+        porcentaje(comp.jsoutTesting2(pais0), comp.jsoutTesting2(pais1));
     }
 
     private static void porcentaje(List<Double> jsoutTesting2, List<Double> jsoutTesting21) {

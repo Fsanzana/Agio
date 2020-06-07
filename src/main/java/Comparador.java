@@ -37,6 +37,7 @@ class Comparador {
 
         } catch (NumberFormatException ex) {              //algunas tablas de la pagina tienen un formato distintos, causando un fallo en
             System.out.println("Error, país no válido");  //el programa, esto se solucionara en versiones futuras
+            
 
       //  } catch (NumberFormatException ex) {
       //      System.out.println("Error, país no válido");

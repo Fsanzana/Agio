@@ -11,13 +11,14 @@ public class jsoutTesting {
         final String url2 = "https://preciosmundi.com/"+paisComparacion+"/precios-supermercado";
         ArrayList<Double> preciosA = new ArrayList<Double>();
         ArrayList<Double> preciosB = new ArrayList<Double>();
-        int divisor=17;
+        int divisor=0;
         double dividendoA=0;
         double dividendoB=0;
         try{
             final Document documento1 = Jsoup.connect(url1).get();
             final Document documento2 = Jsoup.connect(url2).get();
             for(Element row : documento1.select("table tr")){
+                divisor++;
                 if(row.select("td.price:nth-of-type(3)").text().equals("")){
                     continue;
                 }else {

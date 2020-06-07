@@ -18,10 +18,10 @@ public class jsoutTesting {
             final Document documento1 = Jsoup.connect(url1).get();
             final Document documento2 = Jsoup.connect(url2).get();
             for(Element row : documento1.select("table tr")){
-                divisor++;
                 if(row.select("td.price:nth-of-type(3)").text().equals("")){
                     continue;
                 }else {
+                    divisor++;
                     final String ticker = row.select("td.price:nth-of-type(3)").text();
                     double precio = Double.parseDouble(ticker.replaceAll("[$]", "").replaceAll("[,]", "."));
                     dividendoA+= precio;

@@ -4,13 +4,26 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 
 import java.util.ArrayList;
+import java.util.List;
+
 
 public class jsoutTesting2 {
+    private double divisor;
 
-    public static double jsoutTesting2(String url) {
+
+
+    public double getDivisor() {
+        return divisor;
+    }
+
+    public void setDivisor(double divisor) {
+        this.divisor = divisor;
+    }
+
+    public List<Double> jsoutTesting2(String url) {
         final String URL = url;
-        double precio = 0;
-        double i = 0;
+        ArrayList<Double> precio= new ArrayList<Double>();
+
         try {
             final Document document = Jsoup.connect(URL).get();
 
@@ -24,17 +37,17 @@ public class jsoutTesting2 {
                             tempPrice.replaceAll(",", ".").replaceAll("[$]", "");
                     final double price = Double.parseDouble(tempPrice1);
 
-                   precio+= price;
+                   precio.add(price);
 
                 }
-                i++;
+                this.divisor++;
 
             }
         } catch (Exception ex) {
             ex.printStackTrace();
         }
 
-        return (precio/i);
+        return (precio);
     }
 
 

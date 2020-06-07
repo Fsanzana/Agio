@@ -1,3 +1,4 @@
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -17,17 +18,25 @@ public class Main {
         switch (eleccion){
             case 1: String pais0 = "https://preciosmundi.com/chile/precios-supermercado";
                     String pais1 = "https://preciosmundi.com/argentina/precios-supermercado";
-                    porsentaje(comp.jsoutTesting2(pais0), comp.jsoutTesting2(pais1));
+                    porcentaje(comp.jsoutTesting2(pais0), comp.jsoutTesting2(pais1), (comp.getDivisor()/2));
+
                     break;
-            case 2: String pais2 = "https://preciosmundi.com/chile/precios-supermercado";
-                String pais3 = "https://preciosmundi.com/argentina/precios-supermercado";
-                porsentaje(comp.jsoutTesting2(pais3), comp.jsoutTesting2(pais2));
+
 
         }
     }
 
-    private static void porsentaje(double jsoutTesting2, double jsoutTesting21) {
-        double porcentaje = (jsoutTesting21*100)/jsoutTesting2;
+    private static void porcentaje(List<Double> jsoutTesting2, List<Double> jsoutTesting21, double divisor) {
+        double porcentaje=0;
+        for (int i = 0; i < jsoutTesting2.size(); i++) {
+            porcentaje += (jsoutTesting21.get(i)*100)/jsoutTesting2.get(i);
+
+        }
+        porcentaje = porcentaje/divisor;
         System.out.println(porcentaje);
+
+
     }
+
+
 }

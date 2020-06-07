@@ -71,13 +71,27 @@ public class Main {
                         System.out.println("Por favor ingrese una opción valida");
                         break;
                 }
+
+
             } catch (InputMismatchException e) {
                 System.out.println("Por favor ingrese un número entero");
                 tec = new Scanner(System.in);
                 eleccion = -1;
             }
             double porcentaje = 100 - comp.porcentaje(pais0, pais1);
-            System.out.println("El porcentaje de conveniencia es de: " + porcentaje + "%");
+            System.out.println("El porcentaje de conveniencia es de: " + porcentaje + "%\n");
+
+            do {
+
+
+                try {
+                    System.out.println("¿Desea ejecutar el programa nuevamente?\n 1- Si \n 0- NO\n");
+                    eleccion = tec.nextInt();
+                } catch (InputMismatchException e) {
+                    System.out.println("Por favor ingrese las opciones SI o NO\n");
+                }
+            }while (eleccion!=1 && eleccion!=0);
+
         } while (eleccion != 0);
 
 

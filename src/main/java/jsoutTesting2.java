@@ -21,7 +21,7 @@ public class jsoutTesting2 {
     }
 
     public List<Double> jsoutTesting2(String url) {
-        final String URL = url;
+        final String URL = "https://preciosmundi.com/"+url+"/precios-supermercado";
         ArrayList<Double> precio= new ArrayList<Double>();
 
         try {

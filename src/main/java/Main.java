@@ -16,8 +16,8 @@ public class Main {
 
     private static void menu(int eleccion, jsoutTesting2 comp) {
         switch (eleccion){
-            case 1: String pais0 = "https://preciosmundi.com/chile/precios-supermercado";
-                    String pais1 = "https://preciosmundi.com/argentina/precios-supermercado";
+            case 1: String pais0 = "chile";
+                    String pais1 = "argentina";
                     porcentaje(comp.jsoutTesting2(pais0), comp.jsoutTesting2(pais1), (comp.getDivisor()/2));
 
                     break;

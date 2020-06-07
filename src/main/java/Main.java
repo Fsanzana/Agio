@@ -44,7 +44,7 @@ public class Main {
 
         }
 
-        System.out.println(comp.Porcentaje(pais0, pais1));
+        System.out.println(comp.porcentaje(pais0, pais1));
 
     }
 

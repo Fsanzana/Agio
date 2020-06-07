@@ -40,7 +40,7 @@ public class Comparador {
         return (precio);
     }
 
-    public double Porcentaje(String url1, String url2){
+    public double porcentaje(String url1, String url2){
         double porcentaje = 0;
        ArrayList<Double> precio1 = (ArrayList<Double>) comparador(url1);
        ArrayList<Double> precio2 = (ArrayList<Double>) comparador(url2);

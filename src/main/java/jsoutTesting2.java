@@ -40,5 +40,11 @@ public class jsoutTesting2 {
         return (precio);
     }
 
+    public List<Double> jsoutTesting3(String url2){
+        return jsoutTesting2(url2);
+
+
+    }
+
 
 }

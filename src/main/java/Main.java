@@ -45,7 +45,7 @@ public class Main {
 
         }
 
-        System.out.println(comp.jsoutTesting3(pais0, pais1));
+        System.out.println(comp.Porcentaje(pais0, pais1));
 
     }
 

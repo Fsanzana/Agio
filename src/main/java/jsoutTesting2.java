@@ -40,7 +40,7 @@ public class jsoutTesting2 {
         return (precio);
     }
 
-    public double jsoutTesting3(String url1, String url2){
+    public double Porcentaje(String url1, String url2){
         double porcentaje = 0;
        ArrayList<Double> precio1 = (ArrayList<Double>) jsoutTesting2(url1);
        ArrayList<Double> precio2 = (ArrayList<Double>) jsoutTesting2(url2);

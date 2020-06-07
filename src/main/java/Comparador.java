@@ -3,6 +3,7 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -33,8 +34,10 @@ public class Comparador {
                 }
 
             }
-        } catch (Exception ex) {
-            ex.printStackTrace();
+        } catch (NumberFormatException ex) {
+            System.out.println("Error, país no válido");
+        }catch (IOException e){
+            System.out.println("Error de entrada, por favor ingrese un país valido");
         }
 
         return (precio);

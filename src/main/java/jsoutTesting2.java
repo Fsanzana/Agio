@@ -38,9 +38,9 @@ public class jsoutTesting2 {
                     final double price = Double.parseDouble(tempPrice1);
 
                    precio.add(price);
+                    this.divisor++;
 
                 }
-                this.divisor++;
 
             }
         } catch (Exception ex) {

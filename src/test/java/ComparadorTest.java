@@ -6,7 +6,7 @@ import static org.junit.Assert.*;
 
 public class ComparadorTest {
 
-    Comparador test;
+    private Comparador test;
 
     @Before
     public void setUp() throws Exception {

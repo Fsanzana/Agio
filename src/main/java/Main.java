@@ -1,15 +1,14 @@
-import java.util.List;
 import java.util.Scanner;
 
 public class Main {
     private static Scanner tec = new Scanner(System.in);
     public static void main(String[] args) {
-        jsoutTesting2 Comp = new jsoutTesting2();
+        Comparador Comp = new Comparador();
         menu(Comp);
     }
 
 
-    private static void menu(jsoutTesting2 comp) {
+    private static void menu(Comparador comp) {
         String pais0="";
         String pais1="";
         System.out.println("1- Chile"+'\n'+"2- Argentina");

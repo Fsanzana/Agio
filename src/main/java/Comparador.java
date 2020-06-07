@@ -7,10 +7,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class jsoutTesting2 {
+public class Comparador {
 
 
-    public List<Double> jsoutTesting2(String url) {
+    public List<Double> comparador(String url) {
         final String URL = "https://preciosmundi.com/"+url+"/precios-supermercado";
         ArrayList<Double> precio= new ArrayList<Double>();
 
@@ -42,8 +42,8 @@ public class jsoutTesting2 {
 
     public double Porcentaje(String url1, String url2){
         double porcentaje = 0;
-       ArrayList<Double> precio1 = (ArrayList<Double>) jsoutTesting2(url1);
-       ArrayList<Double> precio2 = (ArrayList<Double>) jsoutTesting2(url2);
+       ArrayList<Double> precio1 = (ArrayList<Double>) comparador(url1);
+       ArrayList<Double> precio2 = (ArrayList<Double>) comparador(url2);
        double divisor = precio1.size();
 
         for (int i = 0; i < divisor; i++) {

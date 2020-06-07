@@ -2,14 +2,12 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 public class jsoutTesting2Test {
-     jsoutTesting2 p;
+     Comparador p;
 
     @Before
     public void setUp() throws Exception {
-        p = new jsoutTesting2();
+        p = new Comparador();
     }
 
     @After
@@ -21,7 +19,7 @@ public class jsoutTesting2Test {
     public void jsoutTesting2() {
         String url1= "https://preciosmundi.com/argentina/precios-supermercado";
 
-        System.out.println(p.jsoutTesting2(url1));
+        System.out.println(p.comparador(url1));
 
     }
 }

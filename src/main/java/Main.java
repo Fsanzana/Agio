@@ -14,6 +14,7 @@ public class Main {
         int eleccion = 0;
         String pais0 = "";
         String pais1 = "";
+        String seleccion="";
         do {
             try {
                 System.out.println("1- Chile" + '\n' + "2- Argentina" + '\n' + "3- México" + '\n' + "4- Perú" + '\n' + "5- Bolivia");
@@ -81,18 +82,20 @@ public class Main {
             double porcentaje = 100 - comp.porcentaje(pais0, pais1);
             System.out.println("El porcentaje de conveniencia es de: " + porcentaje + "%\n");
 
+            
             do {
-
-
-                try {
-                    System.out.println("¿Desea ejecutar el programa nuevamente?\n 1- Si \n 0- NO\n");
-                    eleccion = tec.nextInt();
-                } catch (InputMismatchException e) {
-                    System.out.println("Por favor ingrese las opciones SI o NO\n");
-                    tec = new Scanner(System.in);
-                    eleccion = -1;
+                System.out.println("¿Desea ejecutar el programa nuevamente?(s/n)");
+                seleccion = tec.next();
+                if (seleccion.equalsIgnoreCase("s")) {
+                    eleccion = 1;
+                } else if (seleccion.equalsIgnoreCase("n")) {
+                    eleccion = 0;
+                } else {
+                    System.out.println("por favor ingrese una opción válida");
+                    eleccion=2;
                 }
-            }while (eleccion!=1 && eleccion!=0);
+            }while (eleccion==2);
+
 
         } while (eleccion != 0);
 

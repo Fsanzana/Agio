@@ -9,7 +9,6 @@ public class Main {
         menu(Comp);
     }
 
-
     private static void menu(Comparador comp) {
         int eleccion = 0;
         String pais0 = "";

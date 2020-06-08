@@ -78,23 +78,29 @@ public class Main {
                 tec = new Scanner(System.in);
                 eleccion = -1;
             }
-            double porcentaje = 100 - comp.porcentaje(pais0, pais1);
-            System.out.println("El porcentaje de conveniencia es de: " + porcentaje + "%\n");
-
-            
-            do {
-                System.out.println("¿Desea ejecutar el programa nuevamente?(s/n)");
-                seleccion = tec.next();
-                if (seleccion.equalsIgnoreCase("s")) {
-                    eleccion = 1;
-                } else if (seleccion.equalsIgnoreCase("n")) {
-                    eleccion = 0;
-                } else {
-                    System.out.println("por favor ingrese una opción válida");
-                    eleccion=2;
+            if (eleccion>0) { // programa se vuelve a ejecutar automaticamente en caso de error
+                double porcentaje = 100 - comp.porcentaje(pais0, pais1);
+                if (porcentaje > 0) {
+                    System.out.println("El porcentaje de conveniencia es de: " + porcentaje + "%\n" + "comprar en " + pais1 + " es conveniente." + '\n');
+                } else if (porcentaje < 0) {
+                    System.out.println("El porcentaje de conveniencia es de: " + porcentaje + "%\n" + "comprar en " + pais1 + " no es conveniente." + '\n');
+                } else if (porcentaje == 0) {
+                    System.out.println("El porcentaje de conveniencia es de: " + porcentaje + "%\n" + "comprar en " + pais1 + " es lo mismo que comprar en " + pais0 + '\n');
                 }
-            }while (eleccion==2);
+                do {
+                    System.out.println("¿Desea ejecutar el programa nuevamente?(s/n)");
+                    seleccion = tec.next();
+                    if (seleccion.equalsIgnoreCase("s")) {
+                        eleccion = 1;
+                    } else if (seleccion.equalsIgnoreCase("n")) {
+                        eleccion = 0;
+                    } else {
+                        System.out.println("por favor ingrese una opción válida");
+                        eleccion = 2;
+                    }
 
+                } while (eleccion == 2);
+            }
 
         } while (eleccion != 0);
 

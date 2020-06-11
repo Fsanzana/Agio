@@ -47,14 +47,14 @@ class Comparador {
         return (precios);
     }
 
-    double porcentaje(String url1, String url2) {
+    double porcentaje(String pais1, String pais2) {
         double porcentaje = 0;
-        ArrayList<Double> precio1 = (ArrayList<Double>) comparador(url1);
-        ArrayList<Double> precio2 = (ArrayList<Double>) comparador(url2);
+        ArrayList<Double> precio1 = (ArrayList<Double>) comparador(pais1);
+        ArrayList<Double> precio2 = (ArrayList<Double>) comparador(pais2);
         double divisor = precio1.size();
 
         for (int i = 0; i < divisor; i++) {
-            porcentaje += (precio2.get(i) * 100) / precio1.get(i);
+            porcentaje += 100 - (precio2.get(i) * 100) / precio1.get(i);
         }
         porcentaje = porcentaje / divisor;
         return porcentaje;

@@ -19,8 +19,10 @@ public class ComparadorTest {
 
     @Test
     public void comparador() {
-        test.comparador("estados-unidos");
-        test.comparador("afdhsfjdhj");
+        test.comparador("estados-unidos"); // estructura de la tabla interfiere con recopilacion de datos, se arreglará en una futura versión
+        test.comparador("pais quen no existe");
+        test.comparador("Chile");
+        test.comparador("venezuela");// no hay datos disponibles en la base de datos
 
 
         
@@ -28,5 +30,6 @@ public class ComparadorTest {
 
     @Test
     public void porcentaje() {
+        test.porcentaje("pais que no existe","estados-unidos");//metodo porcentaje depende de metodo comparador
     }
 }

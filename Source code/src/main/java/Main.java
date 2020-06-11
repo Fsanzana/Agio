@@ -79,7 +79,7 @@ public class Main {
                 eleccion = -1;
             }
             if (eleccion>0) { // programa se vuelve a ejecutar automaticamente en caso de error
-                double porcentaje = 100 - comp.porcentaje(pais0, pais1);
+                double porcentaje = comp.porcentaje(pais0, pais1);
                 if (porcentaje > 0) {
                     System.out.println("El porcentaje de conveniencia es de: " + porcentaje + "%\n" + "comprar en " + pais1 + " es conveniente." + '\n');
                 } else if (porcentaje < 0) {

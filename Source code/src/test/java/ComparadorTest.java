@@ -23,6 +23,7 @@ public class ComparadorTest {
         test.comparador("pais que no existe");
         test.comparador("Chile");
         test.comparador("venezuela");// no hay datos disponibles en la base de datos
+        test.comparador(null);
 
 
         

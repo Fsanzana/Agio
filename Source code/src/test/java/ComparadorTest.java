@@ -20,7 +20,7 @@ public class ComparadorTest {
     @Test
     public void comparador() {
         test.comparador("estados-unidos"); // estructura de la tabla interfiere con recopilacion de datos, se arreglará en una futura versión
-        test.comparador("pais quen no existe");
+        test.comparador("pais que no existe");
         test.comparador("Chile");
         test.comparador("venezuela");// no hay datos disponibles en la base de datos
 
